@@ -5,7 +5,7 @@
     height: 100vh;
 }
 
-.message {
+message {
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -17,7 +17,7 @@
     margin: auto;
 }
 
-.roll-button {
+#roll-button {
     margin-top: 10px;
     background: tomato;
     cursor: pointer;
