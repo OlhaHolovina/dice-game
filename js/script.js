@@ -3,33 +3,60 @@ const getRandomDiceRoll = function(sides=6) {
 }
 
 const getRollInWords = (firstRoll, secondRoll) => {
-  const sum = firstRoll + secondRoll;
-  if (sum === 2) {
-    return `Snake Eyes`;
-  } else if (sum === 3) {
-    return `Ace Deuce`;
-  } else if (sum === 4) {
-    return `Easy Four`;
-  } else if (sum === 5) {
-    return `four`;
-  } else if (sum === 6) {
-    return `five`;
-  } else if (sum === 7) {
-    return `six`;
-  } else if (sum === 8) {
-    return `six`;
-  } else if (sum === 9) {
-    return `six`;
-  } else if (sum === 10) {
-    return `six`;
-  } else if (sum === 11) {
-    return `six`;
-  } else if (sum === 12) {
-    return `six`;
-  } else {
-    console.error(`Woops! Something went wrong`);
-    return `${firstRoll} and ${secondRoll}`;
+  // hard cases
+  if (firstRoll === 2 && secondRoll === 2){
+    return `Hard Four`;
   }
+  if (firstRoll === 3 && secondRoll === 3){
+    return `Hard Six`;
+  }
+  if (firstRoll === 4 && secondRoll === 4){
+    return `Hard Eight`;
+  }
+  if (firstRoll === 5 && secondRoll === 5){
+    return `Hard Ten`;
+  }
+
+  // specific cases
+  if (firstRoll === 1 && secondRoll === 3){
+    return `Easy Four`;
+  }
+
+  if (firstRoll === 6 && secondRoll === 4){
+    return `Easy Ten`;
+  }
+
+  // sum cases
+  const sum = firstRoll + secondRoll;
+  if (sum === 2){
+    return `Snake Eyes`;
+  }
+  if (sum === 3){
+    return `Ace Deuce`;
+  }
+  if (sum === 5){
+    return `Five (Fever Five)`;
+  }
+  if (sum === 6){
+    return `Easy Six`;
+  }
+  if (sum === 7){
+    return `Natural or Seven Out`;
+  }
+  if (sum === 8){
+    return `Easy Eight`;
+  }
+  if (sum === 9){
+    return `Nine (Nina)`;
+  }
+  if (sum === 11){
+    return `Yo (Yo-leven)`;
+  }
+  if (sum === 12) {
+    return `Boxcars or Midnight`;
+  }
+
+  return `${firstRoll} and ${secondRoll}`;
 }
 
 const rollTheDice = (elementId) => {
