@@ -7,7 +7,7 @@ const rollTheDice = () => {
   const diceRoll = getRandomDiceRoll();
 
   const image = document.querySelector('.dice img');
-  image.setAttribute('src', `img/dice${diceRoll}.svg`);
+  image.setAttribute('src', `https://raw.githubusercontent.com/juneate/dice-game/e17f82ac4be2bce40c69cfcf07b29e371d5c913f/img/dice${diceRoll}.svg`);
   image.setAttribute('alt', `Rolled ${diceRoll}`);
 
   const messageEl = document.querySelector('.message b');
