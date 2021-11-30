@@ -3,23 +3,33 @@ const getRandomDiceRoll = function(sides=6) {
 }
 
 const getRollInWords = (firstRoll, secondRoll) => {
-  return firstRoll + secondRoll;
-  // if (diceRoll === 1) {
-  //   return `one`;
-  // } else if (diceRoll === 2) {
-  //   return `two`;
-  // } else if (diceRoll === 3) {
-  //   return `three`;
-  // } else if (diceRoll === 4) {
-  //   return `four`;
-  // } else if (diceRoll === 5) {
-  //   return `five`;
-  // } else if (diceRoll === 6) {
-  //   return `six`;
-  // } else {
-  //   console.error(`Woops! Something went wrong`);
-  //   return diceRoll;
-  // }
+  const sum = firstRoll + secondRoll;
+  if (sum === 2) {
+    return `Snake Eyes`;
+  } else if (sum === 3) {
+    return `Ace Deuce`;
+  } else if (sum === 4) {
+    return `Easy Four`;
+  } else if (sum === 5) {
+    return `four`;
+  } else if (sum === 6) {
+    return `five`;
+  } else if (sum === 7) {
+    return `six`;
+  } else if (sum === 8) {
+    return `six`;
+  } else if (sum === 9) {
+    return `six`;
+  } else if (sum === 10) {
+    return `six`;
+  } else if (sum === 11) {
+    return `six`;
+  } else if (sum === 12) {
+    return `six`;
+  } else {
+    console.error(`Woops! Something went wrong`);
+    return `${firstRoll} and ${secondRoll}`;
+  }
 }
 
 const rollTheDice = (elementId) => {
