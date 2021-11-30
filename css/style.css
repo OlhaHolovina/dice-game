@@ -5,8 +5,8 @@
     height: 100vh;
 }
 
-message {
-    font-size: 16px;
+.message {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
