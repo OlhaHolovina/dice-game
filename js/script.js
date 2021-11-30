@@ -20,25 +20,21 @@ const getRollInWords = (diceRoll) => {
     return diceRoll;
   }
 }
-
-let lastRoll = 0;
-const rollTheDice = () => {
+const rollTheDice = (elementId) => {
   const diceRoll = getRandomDiceRoll();
 
-  const image = document.querySelector('.dice img');
+  const image = document.querySelector(`#${elementId} img`);
   image.setAttribute('src', `https://raw.githubusercontent.com/juneate/dice-game/e17f82ac4be2bce40c69cfcf07b29e371d5c913f/img/dice${diceRoll}.svg`);
   image.setAttribute('alt', `Rolled ${diceRoll}`);
-
-  const messageEl = document.querySelector('.message b');
-  const rollInWords = getRollInWords(diceRoll);
-  if (lastRoll === diceRoll) {
-    messageEl.textContent = `${rollInWords}, AGAIN!`;
-  } else {
-    messageEl.textContent = rollInWords;
-  }
-
-  lastRoll = diceRoll;
+  return diceRoll;
 }
 
-document.querySelector('#roll-button').addEventListener('click', rollTheDice);
+const rollTheDices = () => {
+  rollTheDice('first-dice');
+  rollTheDice('second-dice');
+
+  // const messageEl = document.querySelector('.message b');
+  // messageEl.textContent = getRollInWords(diceRoll);
+}
+document.querySelector('#roll-button').addEventListener('click', rollTheDices);
 window.addEventListener('load', rollTheDice);
